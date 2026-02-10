@@ -45,3 +45,41 @@ Execute the main script:
 ```bash
 python main.py
 ```
+
+
+# Agent Development Kit
+
+```bash
+User Request
+└── Base Agent
+    ├── Task Analysis & Planning
+    │
+    ├── Tools
+    │   ├── Custom Tools
+    │   │   ├── Python Functions
+    │   │   ├── External APIs
+    │   │   └── Internal Services
+    │   │
+    │   └── Built-in Tools
+    │       ├── Google Search
+    │       ├── Vertex AI Search
+    │       └── BigQuery Analytics
+    │
+    ├── Sub Agents
+    │   ├── LLM Sub-Agent
+    │   │   ├── Domain-Specific Reasoning
+    │   │   ├── Independent Prompt & Context
+    │   │   └── Structured / Text Output
+    │   │
+    │   └── Workflow Agent
+    │       ├── Sequential Agent
+    │       │   └── Step-by-Step Execution
+    │       │
+    │       ├── Parallel Agent
+    │       │   └── Concurrent Task Execution
+    │       │
+    │       └── Loop Agent
+    │           └── Iterative Execution Until Condition Met
+    │
+    └── Final Response
+```
