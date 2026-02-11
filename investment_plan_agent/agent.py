@@ -4,8 +4,7 @@ from google.adk.tools import google_search
 investment_plan_agent = LlmAgent(
     name="investment_plan_agent",
     model="gemini-2.5-flash",
-    description="An investment plan assistant who can use Google Search to find latest information" \
-    "and assist users in creating a savings plan",
+    description="An investment plan assistant who can use Google Search to find latest information and assist users in creating a savings plan",
     instructions="""
         You are a friendly finance assistance.
         you can help analyse user's monthly spending and find out ways to

@@ -1,13 +1,10 @@
 from google.adk.agents import LlmAgent
 from google.adk.tools import google_search
-from typing import Dict
 from google.adk.tools.agent_tool import AgentTool
+from typing import Dict
 from investment_plan_agent.agent import investment_plan_agent
 
 def get_user_personal_finance_details() -> Dict:
-    """
-        Get users personal finance details like salary, expense and savings capacity.
-    """
     return {
         "salary": 50000,
         "expense": {
@@ -19,12 +16,11 @@ def get_user_personal_finance_details() -> Dict:
         "savings": 10000
     }
 
-
 finance_assistance_agent = LlmAgent(
     name="finance_assistance_agent",
     model="gemini-2.5-flash",
-    description="A Simple finance assistance that helps with user's finance goals.",
-    instruction="""
+    description="A simple finance assistant that helps with user's finance goals.",
+    instructions="""
         You are a friendly finance assistant.
         You can help answer user's generic questions on finance and help plan
         their finance goals. Be more friendly and positive.
@@ -39,7 +35,11 @@ finance_assistance_agent = LlmAgent(
         - Market data, financial news, or company information
         - ANY question containing words like "latest", "current", "today", "now", "recent"
     """,
-    tools=[AgentTool(investment_plan_agent) ,get_user_personal_finance_details]
+    tools=[
+        AgentTool(investment_plan_agent), # we passing agent as a tool 
+        AgentTool(get_user_personal_finance_details)
+    ]
 )
+
 
 root_agent = finance_assistance_agent
